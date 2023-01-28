@@ -1021,7 +1021,7 @@ OutputLine(ppd_file_t         *ppd,	/* I - PPD file */
           unsigned char mask = 0x80;
 
           for (; mask != 0 && i < header->cupsBytesPerLine; mask >>= 1) {
-            if (Buffer[i ++] <= 200)  /* arbitrary threshold */
+            if (Buffer[i ++] >= 200)  /* arbitrary threshold */
               out |= mask;
           }
           putchar(~out);
